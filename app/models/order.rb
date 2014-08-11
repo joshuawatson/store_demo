@@ -2,10 +2,11 @@
 #
 # Table name: orders
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id               :integer          not null, primary key
+#  user_id          :integer
+#  stripe_charge_id :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
 #
 
 class Order < ActiveRecord::Base

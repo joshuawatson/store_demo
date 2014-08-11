@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140807184427) do
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
+    t.string   "stripe_charge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -67,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140807184427) do
     t.string   "name"
     t.string   "email"
     t.string   "avatar"
-    t.integer  "stripe_card_id"
+    t.string   "stripe_card_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
