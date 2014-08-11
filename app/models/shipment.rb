@@ -6,6 +6,7 @@
 #  order_id          :integer
 #  price             :decimal(, )
 #  carrier           :string(255)
+#  tracking_code     :string(255)
 #  delivered         :boolean
 #  est_delivery_date :datetime
 #  created_at        :datetime
