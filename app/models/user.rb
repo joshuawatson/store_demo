@@ -14,4 +14,6 @@
 class User < ActiveRecord::Base
   has_many :orders
   has_many :reviews
+
+  validates :email, format: { with: /.+@.+(.).+/, message: "not a valid email" }
 end
