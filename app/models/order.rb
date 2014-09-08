@@ -27,19 +27,10 @@ class Order < ActiveRecord::Base
   end
 
   def refund!(amount = total_cost)
-    # This code is commented out for the demo, but shown
-    # for clarify.
-    # charge = Stripe::Charge.retrieve(stripe_charge_id)
-    # refund = charge.refunds.create(amount: amount)
+    charge = Stripe::Charge.retrieve(stripe_charge_id)
+    charge.refunds.create(amount: amount)
+    return amount
   end
 
-  def refunded_amount
-    # This code is commented out for the demo, but shown
-    # for clarify.
-    # charge = Stripe::Charge.retrieve(stripe_charge_id)
-    # refunded_amount = charge.amount_refunded
-
-    return total_cost / 2.0 # use this for the demo.
-  end
 
 end

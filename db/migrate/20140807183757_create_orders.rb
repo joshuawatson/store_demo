@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.integer :user_id
       t.string :stripe_charge_id
-
+      t.string :stripe_refund_id
 
       t.timestamps
     end
