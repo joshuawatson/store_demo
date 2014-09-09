@@ -28,9 +28,10 @@ class Order < ActiveRecord::Base
 
   def issue_refund(amount = total_cost)
     # This code is commented out because there isn't a stripe api key set, and real charges are not set for the demo. The code is still shown to demonstrate what should be happening in production.
-
+    amount = BigDecimal.new(amount) if amount.is_a?(String)
+    amount_cents = (amount * 100).to_i
     # charge = Stripe::Charge.retrieve(stripe_charge_id)
-    # charge.refunds.create(amount: amount)
+    # charge.refunds.create(amount: amount_cents)
     return amount
   end
 

@@ -26,7 +26,19 @@ class User < ActiveRecord::Base
 
   def reset_password
     # Email the user with a password reset link
-    return "#{name} has been emailed at #{email} with a link to reset their password."
+    return "#{name} has been emailed at #{email} with a password reset link."
+  end
+
+  def issue_coupon_in_percent(percent = 20)
+    if percent == 20
+      return "CPN_FJALDKF01Z1"
+    else
+      return "CPN_12838501ADN"
+    end
+  end
+
+  def issue_free_shipping_coupon
+    return "CPN_AJDOCKA81A0"
   end
 
   def downcase_email
