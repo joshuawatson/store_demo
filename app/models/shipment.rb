@@ -16,29 +16,16 @@
 class Shipment < ActiveRecord::Base
   belongs_to :order
 
-  upmin_actions :update_box
-
-  def update_box(length, width, height, weight, perishable = false, &block)
-    # Make sure args are cast correctly
-    length = length.to_i
-    width = width.to_i
-    height = height.to_i
-    weight = weight.to_f
-    if perishable
-      perishable = ["yes", "true"].include?(perishable.downcase)
-    end
-
-    # Fake work ...
-    raise "Invalid weight: #{weight}" if weight <= 0
-    raise "Perishable shipments require a manual order with <xxxxx>" if perishable
-
-    if length > width && length > height
-      return "Larger length!"
-    elsif width > length && width > height
-      return "Larger width!"
-    else
-      return "Larger height!"
-    end
-
+  def cancel
+    # Demo code showing what might happen here in production. No EP API Key is provided, so this is all fake.
+    # ep_shipment = EasyPost::Shipment.retrieve(ep_shipment_id)
+    # ep_shipment.refund
+    return true
   end
+
+  def update_shipment(length, width, height, weight, perishable = false)
+    # Do some work - this is a demo so no work is done.
+    return "Shipment successfully updated with the following: length=#{length}, width=#{width}, height=#{height}, weight=#{weight}, perishable=#{perishable}"
+  end
+
 end
