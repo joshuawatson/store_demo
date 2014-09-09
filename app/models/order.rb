@@ -22,14 +22,21 @@ class Order < ActiveRecord::Base
     product_orders.each do |product_order|
       @total_cost += product_order.quantity * product_order.purchase_price
     end
-    @total_cost += shipment.price
+    @total_cost += shipment.price if shipment
     return @total_cost
   end
 
-  def refund!(amount = total_cost)
-    charge = Stripe::Charge.retrieve(stripe_charge_id)
-    charge.refunds.create(amount: amount)
+  def issue_refund(amount = total_cost)
+    # This code is commented out because there isn't a stripe api key set, and real charges are not set for the demo. The code is still shown to demonstrate what should be happening in production.
+
+    # charge = Stripe::Charge.retrieve(stripe_charge_id)
+    # charge.refunds.create(amount: amount)
     return amount
+  end
+
+  def create_return_shipping_label
+    # Do some work to create a return label
+    return "http://assets.geteasypost.com/postage_labels/labels/lUoagDx.png"
   end
 
 

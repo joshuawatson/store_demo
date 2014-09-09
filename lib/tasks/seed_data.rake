@@ -66,14 +66,13 @@ namespace :seed_data do
         )
         po.save!
       end
-      order.shipments.new(
+      order.build_shipment(
         price: (rand(1000) / 100.0) + 10.0,
         carrier: [:ups, :usps, :fedex, :dhl][rand(4)],
         delivered: [true, true, false][rand(3)],
         est_delivery_date: [5.days.from_now, 1.days.from_now, 10.days.ago, 7.days.ago][rand(4)]
       ).save!
     end
-
 
   end
 
