@@ -1,7 +1,7 @@
 PATH
   remote: ../admin
   specs:
-    upmin (0.0.34300000000000000000645)
+    upmin (0.0.34300000000000000000649)
       haml (>= 3.0.0)
       jquery-rails
       rails
