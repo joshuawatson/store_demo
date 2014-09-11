@@ -1,0 +1,27 @@
+<a href="<%= upmin_model_path(upmin_model.path_hash) %>">
+  <div class="user-container">
+    <img src="<%= user.avatar_url %>">
+    <h5>
+      <%= user.name %>
+      <br>
+      <small>
+        <%= user.email %>
+      </small>
+    </h5>
+  </div>
+</a>
+
+<% content_for(:head) do %>
+  <style>
+    .user-container {
+      width: 140px;
+      margin: 20px;
+      display: inline-block;
+    }
+    .user-container img {
+      max-width: 80px;
+      max-height: 80px;
+      border-radius: 80px;
+    }
+  </style>
+<% end %>

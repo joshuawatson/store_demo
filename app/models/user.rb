@@ -13,11 +13,12 @@ require 'digest/md5'
 
 class User < ActiveRecord::Base
   has_many :orders
-  has_many :reviews
 
   validates :email, format: { with: /.+@.+(.).+/, message: "not a valid email" }
 
   before_save :downcase_email
+
+  upmin_actions :reset_password, :issue_coupon, :issue_free_shipping_coupon
 
   def avatar_url
     hash = Digest::MD5.hexdigest(email)
@@ -29,7 +30,7 @@ class User < ActiveRecord::Base
     return "#{name} has been emailed at #{email} with a password reset link."
   end
 
-  def issue_coupon_in_percent(percent = 20)
+  def issue_coupon(percent = 20)
     if percent == 20
       return "CPN_FJALDKF01Z1"
     else
