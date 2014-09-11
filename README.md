@@ -1,6 +1,6 @@
 # Store Demo for Upmin
 
-This is a sample application designed to help demo [upmin_rails](https://github.com/upmin/upmin-rails). Below is a basic outline of how to set up the application and get seed data for the demo. All product seed data is taken from the [Best Buy Developer API](https://developer.bestbuy.com/), and users are generated using common first and last names and randomly pairing them.
+This is a sample application designed to help demo [upmin-rails](https://github.com/upmin/upmin-rails). Below is a basic outline of how to set up the application and get seed data for the demo. All product seed data is taken from the [Best Buy Developer API](https://developer.bestbuy.com/), and users are generated using common first and last names and randomly pairing them.
 
 ## Bundle install
 
