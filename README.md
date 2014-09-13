@@ -18,4 +18,4 @@ The store demo uses sqlite by default, so you should be able to create and seed 
 bundle exec rake db:create db:migrate seed_data:products seed_data:users seed_data:orders
 ```
 
-**NOTE** The seed data calls must be made in this order, as the orders seed funciton requires both users and products to exist.
+**NOTE** The seed data calls must be made in this order, as the orders seed function requires both users and products to exist.
