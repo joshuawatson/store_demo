@@ -26,7 +26,8 @@
         <%= form_for(upmin_model.instance, url: upmin_model_path(upmin_model.path_hash), html: { method: :put }) do |f| %>
           <% # Render each attribute %>
           <% upmin_model.klass.attributes.each do |attribute| %>
-            <div class="form-group">
+            <% any_errors = user.errors[attribute].any? %>
+            <div class="form-group <%= any_errors ? "has-error" : "" %>">
               <% # = f.label(attribute.to_s) # Not using this because it drops _id and this isn't always desirable %>
               <label for="<%= upmin_model.attribute_form_id(attribute) %>">
                 <%= upmin_model.attribute_label_name(attribute) %>
