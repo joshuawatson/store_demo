@@ -18,8 +18,6 @@ class User < ActiveRecord::Base
 
   before_save :downcase_email
 
-  upmin_actions :reset_password, :issue_coupon, :issue_free_shipping_coupon
-
   def avatar_url
     hash = Digest::MD5.hexdigest(email)
     return "http://www.gravatar.com/avatar/#{hash}"
