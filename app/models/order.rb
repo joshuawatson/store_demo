@@ -15,8 +15,6 @@ class Order < ActiveRecord::Base
   has_one :shipment
   belongs_to :user
 
-  upmin_attribute :total_cost
-
   def total_cost
     return @total_cost if @total_cost
 
