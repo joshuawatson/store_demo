@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Upmin::Engine => '/ice-ice-baby'
+  mount Upmin::Engine => '/admin'
 
   resources :products
 
