@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def issue_coupon(percent = 20)
-    if percent == 20
+    if percent.to_i == 20
       return "CPN_FJALDKF01Z1"
     else
       return "CPN_12838501ADN"
