@@ -30,7 +30,9 @@ gem 'spring',        group: :development
 
 # upmin-admin
 # gemspec path: '../upmin/admin'
-gem 'upmin-admin', '~> 0.1.0'
+gem 'upmin-admin', path: '../upmin-admin-ruby'
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
