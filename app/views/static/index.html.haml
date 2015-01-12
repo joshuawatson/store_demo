@@ -1,2 +1,10 @@
 %h1 Static#index
 %p Find me in app/views/static/index.html.haml
+
+
+- if can? :access_admin, @user
+  = link_to("Admin", upmin_path)
+
+
+= link_to("Sign in", new_user_session_path)
+= link_to("Sign out", destroy_user_session_path, method: :delete)
